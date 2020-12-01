@@ -567,20 +567,7 @@ def check_logfile_option(solver_name,solver_options):
 
 
 #%%
-dir_path = os.path.dirname(os.path.abspath(__file__))+os.sep
-os.chdir(dir_path)
-options_file_name = "options_test.yml"
-print(options_file_name)
-options = yaml.load(open(dir_path+options_file_name,"r"),Loader=yaml.FullLoader)
-options['co2_reduction'] = 0.5
-co2_red = 0.5
-network = init_model(options)
 
-network = solve_model(network)
-
-network.export_to_hdf5('./network_csv/euro_test'.format(co2_red*100))
-#%%
-"""
 if __name__ == '__main__':
     
     dir_path = os.path.dirname(os.path.abspath(__file__))+os.sep
@@ -599,6 +586,19 @@ if __name__ == '__main__':
      
         network.export_to_hdf5('./network_csv/euro_'+'{:02.0f}_storage'.format(co2_red*100))
 
-"""
 
-# %%
+
+# %% Testing of the code 
+    if False : 
+        dir_path = os.path.dirname(os.path.abspath(__file__))+os.sep
+        os.chdir(dir_path)
+        options_file_name = "options_test.yml"
+        print(options_file_name)
+        options = yaml.load(open(dir_path+options_file_name,"r"),Loader=yaml.FullLoader)
+        options['co2_reduction'] = 0.5
+        co2_red = 0.5
+        network = init_model(options)
+
+        network = solve_model(network)
+
+        network.export_to_hdf5('./network_csv/euro_test'.format(co2_red*100))

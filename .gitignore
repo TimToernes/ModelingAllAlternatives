@@ -8,3 +8,4 @@ output/LOCAL*
 .ipynb_checkpoints/
 __pycache__/
 pypsa_bash*
+post_processing.py 
