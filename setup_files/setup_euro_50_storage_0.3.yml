@@ -1,0 +1,20 @@
+baseline_cost: 164620377000.0
+mga_convergence_tol: 0.05
+mga_slack: 0.3
+mga_slack_type: fixed
+mga_variables:
+- wind
+- solar
+- H2
+- battery
+- co2_emission
+network_name: euro_50_storage
+output_file: output/prime
+solver_options:
+  BarConvTol: 1.0e-08
+  FeasibilityTol: 0.001
+  LogToConsole: 0
+  crossover: 0
+  logfile: solver.log
+  method: 2
+  threads: 32

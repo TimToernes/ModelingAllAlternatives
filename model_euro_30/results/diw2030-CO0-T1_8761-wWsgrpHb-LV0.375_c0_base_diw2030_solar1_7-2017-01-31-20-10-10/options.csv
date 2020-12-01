@@ -1,0 +1,2 @@
+tmin,add_battery_storage,solar_potential_factor,PHS_max_hours,hydro_max_hours,add_hydro,no_lines,co2_reduction,split_onwind,formulation,beta_layout,solar_cf_correction,add_H2_storage,costref,solver_name,CO2price,add_PHS,tmax,hydro_capital_cost,line_cost_factor,battery_max_hours,abs_flow_cost,marginal_cost_storage,add_ror,k_own,line_volume_limit,H2_max_hours,gamma
+1,True,0.1,6,None,True,False,0.05,True,cycles,1,0.7884569896712135,True,diw2030,gurobi,0,True,8761,False,1.0,6.0,0,0,True,None,187500000.0,168.0,0.0

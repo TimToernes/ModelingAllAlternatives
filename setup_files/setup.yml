@@ -1,0 +1,23 @@
+# Default options
+
+# Hints for Yaml:
+# Scientific notation requires . before e and sign, e.g. 1.e+8 not 1e8
+# For "None" just leave the value blank or null, e.g. 'goat' :  OR 'goat' : null
+# True/False are not case-sensitive
+
+'network_name' : 'euro_50_storage' #'Scandinavia_co2' or 'euro_30'
+'solver_options' : 
+  'LogToConsole' : 0
+  'method': 2 # 1 = simplex, 2 = barrier
+  'threads': 4
+  'logfile': 'solver.log'
+  'crossover' : 0
+  'BarConvTol' : 1.e-8
+  'FeasibilityTol' : 1.e-3  #1e-2 ###1e-6 # [1e-9..1e-2]
+'mga_slack' : 0.1
+'mga_slack_type' : 'percent' # 'fixed' or 'percent'
+'baseline_cost' : 1.64620377e+11
+#'dim' : 2 #132
+'mga_variables' : ['wind','solar','H2','battery']  # wind,solar,ocgt,transmission,H2,battery
+'mga_convergence_tol' : 0.05
+'output_file' : 'output/local'

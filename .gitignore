@@ -1,0 +1,10 @@
+
+Archive/
+tmp/
+output/archive/
+output/newest*
+output/LOCAL*
+.vscode/
+.ipynb_checkpoints/
+__pycache__/
+pypsa_bash*

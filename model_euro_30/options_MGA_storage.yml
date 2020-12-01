@@ -1,0 +1,49 @@
+# Default options
+
+# Hints for Yaml:
+# Scientific notation requires . before e and sign, e.g. 1.e+8 not 1e8
+# For "None" just leave the value blank or null, e.g. 'goat' :  OR 'goat' : null
+# True/False are not case-sensitive
+
+'run_name': 'opteu'
+'results_dir_name': 'results/'
+'results_suffix': ''
+'tmin': '2011'
+'tmax': '2012'
+'line_volume_limit_factor': 0.0625
+'line_volume_limit_max': null # 5.e+8   #line_volume_limit is set = factor * max
+'line_cost_factor': 1
+'co2_reduction': 1 #0.95  #leave empty for None
+'split_onwind' : False ###False
+'solver_name': 'gurobi'
+'solver_io' : null   # null or 'python'
+'solver_options':
+  'method': 2
+  'threads': 8
+  'logfile': 'solver.log'
+  'BarConvTol' : 1.e-8 #1.e-12 ###1e-8 # [0..1]
+  'crossover' : 0   # or -1
+  'FeasibilityTol' : 1.e-6 #1e-2 ###1e-6 # [1e-9..1e-2]
+'formulation': 'angles'
+'save_res': True
+'costref': 'diw2030'   #'Hir',
+'CO2price': 0.          #10, #Eur/t_CO2
+'add_H2_storage' : True
+'H2_max_hours': 168. # WARNING: if fixing large max_hours, make sure energy capacity is cheap/free
+'add_battery_storage' : True
+'battery_max_hours': 6.
+'add_PHS': False
+'PHS_max_hours': 6.
+'add_hydro': False
+'hydro_max_hours': null #if None, take E_stor from hydrocapa_df
+'add_ror': False
+'hydro_capital_cost' : False
+'marginal_cost_storage' : 0. #1e-4
+'no_lines': False
+'beta_layout': 1
+# solar capacity factors in REatlas are too high compared to other
+# studies; we correct this by applying a constant 'inverter
+# inefficiency' to the p_max_pu timeseries; comparing with
+# Pietzker+(2014) http://dx.doi.org/10.1016/j.apenergy.2014.08.011
+# the produced-power weighted average of capacity factor ratios is 1.2683
+'solar_cf_correction': 0.788457  # =  >>> 1/1.2683
